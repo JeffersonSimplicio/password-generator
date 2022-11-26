@@ -1,3 +1,4 @@
-from config_pass import size_password
+import config_pass
 
-size = size_password()
+size = config_pass.size_password()
+with_symbol = config_pass.with_special_characters()
