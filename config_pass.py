@@ -1,6 +1,13 @@
-def size_password():
+def size_password(min_size=4):
     while True:
-        size = str(
-            input('Qual o tamanho da senha?(Mínimo 4 dígitos) ')
-            ).strip()
-        return size
+        try:
+            size = int(input(
+                f'Qual o tamanho da senha?(Mínimo {min_size} dígitos) '
+            ))
+        except ValueError:
+            print('Por favor, digite um número inteiro valido.')
+        else:
+            if size < min_size:
+                print(f'O valor mínimo aceito é {min_size}')
+            else:
+                return size
