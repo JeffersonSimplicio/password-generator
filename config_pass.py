@@ -32,6 +32,21 @@ def with_number():
             )
 
 
+def with_alphabet():
+    while True:
+        with_alpha = str(input('Usar letras na senha?(S/N) ')).strip().upper()
+        if with_alpha in negative:
+            return False
+        if with_alpha in positive:
+            return True
+        else:
+            print(
+                'Resposta invalida!'
+                '\nDigite "S" - Caso deseje usar números.'
+                '\nDigite "N" - Caso não deseje usar números.'
+            )
+
+
 def with_special_characters():
     while True:
         with_symbol = (
