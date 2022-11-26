@@ -1,3 +1,7 @@
+positive = ('S', 'SIM', 'Y', 'YES')
+negative = ('N', 'NÃO', 'NAO', 'NO', 'NOT')
+
+
 def size_password(min_size=4):
     while True:
         try:
@@ -13,9 +17,22 @@ def size_password(min_size=4):
                 return size
 
 
+def with_number():
+    while True:
+        with_num = str(input('Usar números na senha?(S/N) ')).strip().upper()
+        if with_num in positive:
+            return True
+        elif with_num in negative:
+            return False
+        else:
+            print(
+                'Resposta invalida!'
+                '\nDigite "S" - Caso deseje usar números.'
+                '\nDigite "N" - Caso não deseje usar números.'
+            )
+
+
 def with_special_characters():
-    positive = ('S', 'SIM', 'Y', 'YES')
-    negative = ('N', 'NÃO', 'NAO', 'NO', 'NOT')
     while True:
         with_symbol = (
             str(input('Usar caracteres especiais(<=>?@[\]^_`{|}~.)?(S/N) '))
