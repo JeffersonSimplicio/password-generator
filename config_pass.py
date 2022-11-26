@@ -37,13 +37,32 @@ def with_alphabet():
         with_alpha = str(input('Usar letras na senha?(S/N) ')).strip().upper()
         if with_alpha in negative:
             return False
-        if with_alpha in positive:
+        elif with_alpha in positive:
             return True
         else:
             print(
                 'Resposta invalida!'
                 '\nDigite "S" - Caso deseje usar números.'
                 '\nDigite "N" - Caso não deseje usar números.'
+            )
+
+
+def is_case_sensitive():
+    while True:
+        sensitive = (
+            str(input('Usar letras maiúsculas e minusculas?(S/N) '))
+            .strip()
+            .upper()
+        )
+        if sensitive in positive:
+            return True
+        elif sensitive in negative:
+            return False
+        else:
+            print(
+                'Resposta invalida!'
+                '\nDigite "S" - Para usar letras maiúsculas e minusculas.'
+                '\nDigite "N" - Para usar apenas letras minusculas.'
             )
 
 
