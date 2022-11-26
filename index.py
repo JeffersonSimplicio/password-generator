@@ -1,14 +1,10 @@
 import config_pass
 from pass_generator import generator
 
-size: int
-with_num: bool
-with_alpha: bool
-case_sensitive = True
-with_symbol: bool
+size = config_pass.size_password()
 
 while True:
-    size = config_pass.size_password()
+    case_sensitive = True
     with_num = config_pass.with_number()
     with_alpha = config_pass.with_alphabet()
     if with_alpha:
